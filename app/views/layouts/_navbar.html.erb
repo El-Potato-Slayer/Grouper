@@ -1,0 +1,18 @@
+<nav >
+  <div class="bg-blue-500 flex justify-between p-2">
+    <button id="nav-btn" class="text-white rounded nav-toggler" >
+      <i  class="material-icons">menu</i>
+    </button>
+    <p class="text-lg text-white uppercase ">Expenses</p>
+    <i class="material-icons text-white">search</i>
+  </div>
+  <div id="nav-links" class="hidden" >
+    <div class="flex flex-col items-center text-center">
+      <%= link_to "Home", :root, class: "py-1 w-full" %>
+      <%= link_to "Expenses", :root, class: "py-1 w-full" %>
+      <%= link_to "External expenses", :root, class: "py-1 w-full" %>
+      <%= link_to "Groups", :root, class: "py-1 w-full" %>
+      <%= link_to 'Logout', destroy_user_session_path, method: :delete, class: "py-1 w-full" %>
+    </div>
+  </div>
+</nav>

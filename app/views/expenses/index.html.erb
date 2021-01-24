@@ -1,31 +1,29 @@
-<p id="notice"><%= notice %></p>
+<h1 class="text-xl text-center bg-white">All Expenses</h1>
 
-<h1>Expenses</h1>
+<div class="flex justify-between shadow bg-white px-2 py-4">
+  <h2 class="text-lg">Total</h2>
+  <p class="text-lg font-semibold">$<%= all_expenses_total %></p>
+</div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Author</th>
-      <th>Name</th>
-      <th>Amount</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<% most_recent_expenses.each do |expense| %>
+  <div class="flex p-3 m-2 bg-white shadow rounded font-semibold">
+    <div class="w-20">
+      <%= image_tag(expense.groups.first.image, class: "w-full") %>
+    </div>
+    <div class="flex flex-col justify-between w-full pl-3 pt-2">
+      <div class="flex justify-between">
+        <p class="text-gray-400"><%= expense.name %></p>
+        <p class="text-gray-700">$<%= '%.2f' % expense.amount %></p>
+      </div>
+      <p class="text-xs text-gray-400"><%= expense.created_at.strftime("%d %b %Y") %></p>
+    </div>
+  </div>
+<% end %>
 
-  <tbody>
-    <% @expenses.each do |expense| %>
-      <tr>
-        <td><%= expense.author_id %></td>
-        <td><%= expense.name %></td>
-        <td><%= expense.amount %></td>
-        <td><%= link_to 'Show', expense %></td>
-        <td><%= link_to 'Edit', edit_expense_path(expense) %></td>
-        <td><%= link_to 'Destroy', expense, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<div class="text-center">
+  <button class="bg-green-600 px-4 py-1 shadow-md rounded-md text-gray-100 m-4">
+    <%= link_to "Add new", new_expense_path %>
+  </button>
+</div>
 
-<br>
-
-<%= link_to 'New Expense', new_expense_path %>
+<%#= link_to 'New Expense', new_expense_path %>
