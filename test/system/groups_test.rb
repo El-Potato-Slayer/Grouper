@@ -15,6 +15,7 @@ class GroupsTest < ApplicationSystemTestCase
     click_on "New Group"
 
     fill_in "Name", with: @group.name
+    fill_in "User", with: @group.user_id
     click_on "Create Group"
 
     assert_text "Group was successfully created"
@@ -26,6 +27,7 @@ class GroupsTest < ApplicationSystemTestCase
     click_on "Edit", match: :first
 
     fill_in "Name", with: @group.name
+    fill_in "User", with: @group.user_id
     click_on "Update Group"
 
     assert_text "Group was successfully updated"
