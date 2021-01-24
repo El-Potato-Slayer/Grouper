@@ -5,20 +5,7 @@
   <p class="text-lg font-semibold">$<%= all_expenses_total %></p>
 </div>
 
-<% most_recent_expenses.each do |expense| %>
-  <div class="flex p-3 m-2 bg-white shadow rounded font-semibold">
-    <div class="w-20">
-      <%= image_tag(expense.groups.first.image, class: "w-full") %>
-    </div>
-    <div class="flex flex-col justify-between w-full pl-3 pt-2">
-      <div class="flex justify-between">
-        <p class="text-gray-400"><%= expense.name %></p>
-        <p class="text-gray-700">$<%= '%.2f' % expense.amount %></p>
-      </div>
-      <p class="text-xs text-gray-400"><%= expense.created_at.strftime("%d %b %Y") %></p>
-    </div>
-  </div>
-<% end %>
+<%= render "recent_expenses" %>
 
 <div class="text-center">
   <button class="bg-green-600 px-4 py-1 shadow-md rounded-md text-gray-100 m-4">
