@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'group_expenses/new'
+  get 'group_expenses/create'
+  get 'group_expenses/destroy'
   resources :groups
   resources :expenses
   devise_for :users
