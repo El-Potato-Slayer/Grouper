@@ -1,8 +1,6 @@
-<% most_recent_expenses.each do |expense| %>
+<% most_recent_expenses(@expenses).each do |expense| %>
   <div class="flex p-3 m-2 bg-white shadow rounded font-semibold">
-    <div class="w-20">
-      <%= image_tag(expense.groups.first.image, class: "w-full") %>
-    </div>
+    <%= display_existing_image(expense) %>
     <div class="flex flex-col justify-between w-full pl-3 pt-2">
       <div class="flex justify-between">
         <p class="text-gray-400"><%= expense.name %></p>

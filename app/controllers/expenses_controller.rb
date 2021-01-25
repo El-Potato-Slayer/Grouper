@@ -3,8 +3,12 @@ class ExpensesController < ApplicationController
   
   # GET /expenses
   # GET /expenses.json
-  def index
-    @expenses = Expense.all
+  def grouped_expenses_index
+    @expenses = current_user.expenses.grouped
+  end
+
+  def external_expenses_index
+    @expenses = current_user.expenses.ungrouped
   end
 
   # GET /expenses/1
