@@ -1,12 +1,16 @@
-<p>
-  <strong>User:</strong>
-  <%= @group.user_id %>
-</p>
+<% @group.expenses.each do |expense| %>
+  <div class="flex p-3 m-2 bg-white shadow rounded font-semibold">
+    <%= display_group_image(@group) %>
+    <div class="flex flex-col justify-between w-full pl-3 pt-2">
+      <div class="flex justify-between">
+        <p class="text-gray-400"><%= expense.name %></p>
+        <p class="text-gray-700">$<%= '%.2f' % expense.amount %></p>
+      </div>
+      <div class="flex flex-row justify-between text-xs text-gray-400">
+        <p><%= expense.created_at.strftime("%d %b %Y") %></p>
+        <p>Created by <%= current_user.name %></p>
+      </div>
+    </div>
+  </div>
+<% end %>
 
-<p>
-  <strong>Name:</strong>
-  <%= @group.name %>
-</p>
-
-<%= link_to 'Edit', edit_group_path(@group) %> |
-<%= link_to 'Back', groups_path %>

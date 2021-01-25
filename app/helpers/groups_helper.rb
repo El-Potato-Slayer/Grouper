@@ -4,4 +4,8 @@ module GroupsHelper
       render :partial => "group_image", locals: {group: group}
     end
   end
+
+  def sort_groups(group)
+    group.order("name ASC")
+  end
 end
