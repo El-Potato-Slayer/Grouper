@@ -54,6 +54,7 @@ class GroupsController < ApplicationController
   # DELETE /groups/1
   # DELETE /groups/1.json
   def destroy
+    # @group.expenses.destroy_all
     @group.destroy
     respond_to do |format|
       format.html { redirect_to groups_url, notice: "Group was successfully destroyed." }
