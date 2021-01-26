@@ -11,22 +11,25 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :author_id %>
-    <%= form.number_field :author_id %>
-  </div>
-
-  <div class="field">
-    <%= form.label :name %>
+  <div class="field flex flex-col px-8 text-center ">
+    <%= form.label 'Expense name', class: "py-1 text-lg" %>
     <%= form.text_field :name %>
   </div>
 
-  <div class="field">
-    <%= form.label :amount %>
+  <div class="field flex flex-col px-8 py-4 text-center">
+    <%= form.label :amount, class: "py-1 text-lg" %>
     <%= form.text_field :amount %>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
+  <div class="control">
+    <%= form.label "Groups" %>
+    <%= form.collection_check_boxes(:group_ids, current_user.groups, :id, :name) do |b| %>
+      <%= b.check_box %>
+      <%= b.label %>
+    <% end %>
+  </div>
+
+  <div class="actions text-center pt-8">
+    <%= form.submit "Add expense", class: "bg-blue-400 text-gray-50 py-2 px-4" %>
   </div>
 <% end %>

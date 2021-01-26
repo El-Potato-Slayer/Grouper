@@ -1,0 +1,11 @@
+<div class="nested-fields">
+  <%= form.hiddden_field :_destroy %>
+  <div>
+    <%= form.label :name %>
+    <%= form.collection_select :name %>
+  </div>
+
+  <div>
+    <%= link_to "Remove", '#', class: "remove_fields" %>
+  </div>
+</div>

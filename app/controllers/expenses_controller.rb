@@ -18,7 +18,7 @@ class ExpensesController < ApplicationController
 
   # GET /expenses/new
   def new
-    @expense = Expense.new
+    @expense = current_user.expenses.build
   end
 
   # GET /expenses/1/edit
@@ -28,12 +28,12 @@ class ExpensesController < ApplicationController
   # POST /expenses
   # POST /expenses.json
   def create
-    @expense = Expense.new(expense_params)
+    @expense = current_user.expenses.build(expense_params)
 
     respond_to do |format|
       if @expense.save
-        format.html { redirect_to @expense, notice: "Expense was successfully created." }
-        format.json { render :show, status: :created, location: @expense }
+        format.html { redirect_to :root, notice: "Expense was successfully created." }
+        # format.json { render :show, status: :created, location: @expense }
       else
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @expense.errors, status: :unprocessable_entity }
@@ -73,6 +73,6 @@ class ExpensesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def expense_params
-      params.require(:expense).permit(:author_id, :name, :amount)
+      params.require(:expense).permit(:author_id, :name, :amount, group_ids: [] )
     end
 end
