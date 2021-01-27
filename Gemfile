@@ -25,6 +25,7 @@ gem 'devise'
 gem 'hirb'
 gem 'material_icons'
 gem 'jquery-rails'
+gem 'rspec-rails'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'

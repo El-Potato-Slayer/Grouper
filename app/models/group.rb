@@ -8,4 +8,6 @@ class Group < ApplicationRecord
 
   has_one_attached :image
 
+  validates :name, presence: true
+  validates :user_id, presence: true
 end
