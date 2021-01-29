@@ -13,7 +13,7 @@ RSpec.describe Group, type: :model do
     end
 
     it 'ensures all fields are present' do
-      author = User.new(name: 'test', email: 'test@test.com', password: '123456', password_confirmation: '123456').save
+      user = User.new(name: 'John', email: 'john@test.com', password: '123456', password_confirmation: '123456').save
       group = Group.new(name: 'test', user_id: 1).save
       expect(group).to eq(true)
     end
