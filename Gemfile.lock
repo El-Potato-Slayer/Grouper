@@ -247,7 +247,7 @@ DEPENDENCIES
   jbuilder (~> 2.7)
   jquery-rails
   material_icons
-  pg (~> 1.2)
+  pg
   puma (~> 5.0)
   rails (~> 6.1.1)
   rspec-rails
