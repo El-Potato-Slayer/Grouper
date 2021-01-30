@@ -9,5 +9,5 @@ class Expense < ApplicationRecord
 
   validates :author_id, presence: true
   validates :name, presence: true
-  validates :amount, presence: true
+  validates :amount, presence: true, numericality: {only_float: true}
 end

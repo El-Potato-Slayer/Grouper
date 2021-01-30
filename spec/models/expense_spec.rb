@@ -24,7 +24,7 @@ RSpec.describe Expense, type: :model do
     end
     
     it 'ensures Expense saves' do
-      author = User.new(name: 'test', email: 'test@test.com', password: '123456', password_confirmation: '123456').save
+      author = User.new(id: 1, name: 'john', email: 'john@doe.com', password: '123456', password_confirmation: '123456').save
       expense = Expense.new(author_id: 1, name: 'test', amount: 20.5).save
       expect(expense).to eq(true)
     end
