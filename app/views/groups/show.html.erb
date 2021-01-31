@@ -1,17 +1,6 @@
-<% @group.expenses.each do |expense| %>
-  <div class="flex p-3 m-2 bg-white shadow rounded font-semibold">
-    <%= display_group_image(@group) %>
-    <div class="flex flex-col justify-between w-full pl-3 pt-2">
-      <div class="flex justify-between">
-        <p class="text-gray-400"><%= expense.name %></p>
-        <p class="text-gray-700">$<%= '%.2f' % expense.amount %></p>
-      </div>
-      <div class="flex flex-row justify-between text-xs text-gray-400">
-        <p><%= expense.created_at.strftime("%d %b %Y") %></p>
-        <p>Created by <%= current_user.name %></p>
-      </div>
-    </div>
-  </div>
-<% end %>
-<%= render "shared_partials/add_button" %>
-  <%= link_to 'Back', :back, class: "border shadow-md border-green-500 text-green-500 px-4 py-1 rounded"%>
+<%= render 'grouped_expenses' %>
+
+<div class="text-center">
+  <%= render "shared_partials/add_button" %>
+  <%= link_to 'Back', :back, class: "border shadow-md border-green-500 text-green-500 px-6 py-1 rounded"%>
+</div>

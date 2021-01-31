@@ -1,7 +1,4 @@
 module ExpensesHelper
-  def all_expenses_total(expenses)
-    '%.2f' % expenses.sum(:amount)
-  end
 
   def most_recent_expenses(expenses)
     expenses.order("expenses.created_at DESC")
