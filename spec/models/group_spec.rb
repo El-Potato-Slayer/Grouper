@@ -1,5 +1,4 @@
 require 'rails_helper'
-# require_relative '../support/devise'
 
 RSpec.describe Group, type: :model do
   describe 'validation tests' do
@@ -14,8 +13,6 @@ RSpec.describe Group, type: :model do
     end
 
     it 'ensures all fields are present' do
-      # login_user
-      # user = FactoryBot.build(:user)
       user = User.new(id: 1, name: 'John', email: 'john@does.com', password: '123456', password_confirmation: '123456').save
       group = Group.new(name: 'Groupname', user_id: 1).save
       expect(group).to eq(true)

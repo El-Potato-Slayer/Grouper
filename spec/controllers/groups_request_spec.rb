@@ -5,7 +5,6 @@ RSpec.describe GroupsController, type: :controller do
   # user = FactoryBot.create(:user)
   
   describe "GET #index" do
-    # login_as(user, :scope => :user)
     login_user
     it "returns a success response" do
       get :index
