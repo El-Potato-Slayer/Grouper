@@ -6,6 +6,7 @@ class Expense < ApplicationRecord
 
   scope :grouped, -> { includes(:groups).where.not(groups: { id: nil }).order('expenses.created_at DESC') }
   scope :ungrouped, -> { where.missing(:groups).order('expenses.created_at DESC') }
+  scope :total, -> { sum(:amount) }
 
   validates :author_id, presence: true
   validates :name, presence: true
