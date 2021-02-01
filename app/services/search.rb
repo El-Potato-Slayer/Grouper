@@ -7,12 +7,12 @@ module Search
     end
 
     def find
-      if(@params.has_key?(:search))
+      if @params.key?(:search)
         current_user.expenses.where(@content.matches("%#{@params[:search]}%"))
-               .or(current_user.expenses.where(@name.matches("%#{@params[:search]}%")))
-               .paginate(page: @params[:page],per_page:5)
+          .or(current_user.expenses.where(@name.matches("%#{@params[:search]}%")))
+          .paginate(page: @params[:page], per_page: 5)
       else
-        current_user.expenses.paginate(page: @params[:page],per_page:5)
+        current_user.expenses.paginate(page: @params[:page], per_page: 5)
       end
     end
   end

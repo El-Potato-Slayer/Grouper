@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature "Users", type: :feature do
+RSpec.feature 'Users', type: :feature do
   describe 'create new User' do
     scenario 'should be successful' do
       user = FactoryBot.create(:user)

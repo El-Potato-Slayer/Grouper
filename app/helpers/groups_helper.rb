@@ -1,7 +1,5 @@
 module GroupsHelper
   def display_group_image(group)
-    if group.image.attached?
-      render :partial => "group_image", locals: {group: group}
-    end
+    render partial: 'group_image', locals: { group: group } if group.image.attached?
   end
 end

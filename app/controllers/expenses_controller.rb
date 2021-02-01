@@ -1,6 +1,6 @@
 class ExpensesController < ApplicationController
-  before_action :set_expense, only: %w[ show edit update destroy ]
-  
+  before_action :set_expense, only: %w[show edit update destroy]
+
   # GET /expenses
   # GET /expenses.json
   def grouped_expenses_index
@@ -13,8 +13,7 @@ class ExpensesController < ApplicationController
 
   # GET /expenses/1
   # GET /expenses/1.json
-  def show
-  end
+  def show; end
 
   # GET /expenses/new
   def new
@@ -22,8 +21,7 @@ class ExpensesController < ApplicationController
   end
 
   # GET /expenses/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /expenses
   # POST /expenses.json
@@ -32,7 +30,7 @@ class ExpensesController < ApplicationController
 
     respond_to do |format|
       if @expense.save
-        format.html { redirect_to :root, notice: "Expense was successfully created." }
+        format.html { redirect_to :root, notice: 'Expense was successfully created.' }
         # format.json { render :show, status: :created, location: @expense }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -46,7 +44,7 @@ class ExpensesController < ApplicationController
   def update
     respond_to do |format|
       if @expense.update(expense_params)
-        format.html { redirect_to @expense, notice: "Expense was successfully updated." }
+        format.html { redirect_to @expense, notice: 'Expense was successfully updated.' }
         format.json { render :show, status: :ok, location: @expense }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -60,19 +58,20 @@ class ExpensesController < ApplicationController
   def destroy
     @expense.destroy
     respond_to do |format|
-      format.html { redirect_to :root, notice: "Expense was successfully destroyed." }
+      format.html { redirect_to :root, notice: 'Expense was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_expense
-      @expense = Expense.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def expense_params
-      params.require(:expense).permit(:author_id, :name, :amount, group_ids: [] )
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_expense
+    @expense = Expense.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def expense_params
+    params.require(:expense).permit(:author_id, :name, :amount, group_ids: [])
+  end
 end
