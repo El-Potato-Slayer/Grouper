@@ -3,6 +3,6 @@
 
 <%= render "total_expenses" %>
 
-<%= render "recent_expenses" %>
+<%= render partial: "recent_expenses", locals: { expenses: @expenses.includes([:group_expenses])} %>
 
 <%= render "shared_partials/add_button" %>

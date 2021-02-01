@@ -3,6 +3,6 @@
 
 <%= render "total_expenses" %>
 
-<%= render "recent_expenses" %>
+<%= render partial: "recent_expenses", locals: {expenses: @expenses} %>
 
 <%= render "shared_partials/add_button" %>

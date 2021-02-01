@@ -1,4 +1,4 @@
-<% most_recent_expenses(@expenses).each do |expense| %>
+<% most_recent_expenses(expenses).each do |expense| %>
   <%= link_to expense do %>
     <div class="flex p-3 m-2 bg-white shadow rounded font-semibold">
       <%= display_existing_image(expense) %>
