@@ -1,4 +1,4 @@
-<% sort_groups(@groups).each do |group| %>
+<% @groups.each do |group| %>
   <%= link_to group do %>
   <div class="flex p-3 m-2 bg-white shadow rounded font-semibold">
     <%= display_group_image(group) %>

@@ -1,6 +1,4 @@
 class Group < ApplicationRecord
-  # before_destroy :destroy_group_expenses
-
   belongs_to :user
 
   has_many :group_expenses, dependent: :destroy
@@ -10,4 +8,6 @@ class Group < ApplicationRecord
 
   validates :name, presence: true
   validates :user_id, presence: true
+
+  scope :alphabetical, -> { order("name ASC") }
 end

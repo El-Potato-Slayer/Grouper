@@ -22,7 +22,7 @@
   <div class="control px-8">
     <%= form.label "Groups" %>
     <div class="grid grid-cols-3">
-    <%= form.collection_check_boxes(:group_ids, sort_groups(current_user.groups), :id, :name) do |checkbox| %>
+    <%= form.collection_check_boxes(:group_ids, current_user.groups.alphabetical, :id, :name) do |checkbox| %>
       <div>
         <%= checkbox.check_box %>
         <%= checkbox.label %>
