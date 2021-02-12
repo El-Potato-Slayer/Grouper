@@ -38,9 +38,13 @@ To get this project up and running locally, you must already have Ruby, Ruby on 
 5. Run ```bundle install```.
 6. Run ```yarn install```.
 7. Run ```rails db:create```.
-7. Run ```rails db:migrate```.
-8. Run ```rails server``` or ```rails s```.
+8. Run ```rails db:migrate```.
+9. Run ```rails server``` or ```rails s```.
 
+**To run the test suite on your local machine:**
+1. Ensure you're in the root directory of the application.
+2. Open terminal.
+3. run ```rspec```
 
 ## Author Details:
 
@@ -49,6 +53,9 @@ To get this project up and running locally, you must already have Ruby, Ruby on 
 - Github:[@El-Potato-Slayer](https://github.com/El-Potato-Slayer)
 - Twitter:[@elpotatoslayer](https://twitter.com/elpotatoslayer)
 - LinkedIn: [Chad van Wyk](https://www.linkedin.com/in/chad-van-wyk-4228b21a6/)
+
+## Acknowledgments
+The design was inspired by [Gregoire Vella on Behance](https://www.behance.net/gallery/19759151/Snapscan-iOs-design-and-branding?tracking_source=)
 
 ## Show your support
 
