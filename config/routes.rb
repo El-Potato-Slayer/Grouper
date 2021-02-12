@@ -1,8 +1,5 @@
 Rails.application.routes.draw do
   resources :groups
-  get 'group_expenses/new'
-  get 'group_expenses/create'
-  get 'group_expenses/destroy'
   resources :expenses
   get "external_expenses_index" => "expenses#external_expenses_index"
   devise_for :users

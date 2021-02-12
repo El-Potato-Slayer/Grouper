@@ -11,10 +11,6 @@ class ExpensesController < ApplicationController
     @expenses = current_user.expenses.ungrouped
   end
 
-  # GET /expenses/1
-  # GET /expenses/1.json
-  def show; end
-
   # GET /expenses/new
   def new
     @expense = current_user.expenses.build
