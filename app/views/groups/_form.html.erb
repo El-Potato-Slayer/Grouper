@@ -1,0 +1,33 @@
+<%= form_with(model: group) do |form| %>
+  <% if group.errors.any? %>
+    <div id="error_explanation" class="text-center py-2 bg-red-500 text-gray-100">
+      <ul>
+        <% group.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field flex flex-col px-8 py-4 text-center">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field flex flex-col px-8 pt-4  items-center text-center">
+    <%= form.label :image, id: "pictureInput", class: "rounded-lg border-2 border-gray-400 cursor-pointer px-4 py-2 " do %>
+      Upload image
+      <%= form.file_field :image, class: "flex flex-col hidden" %>
+    <% end %>
+    <div id="target" class="py-8 w-24 flex justify-center">
+      <%= display_group_image(@group) %>
+    </div>
+  </div>
+
+  <div class="actions text-center ">
+    <%= form.submit "Submit", class: "bg-blue-500 rounded text-gray-50 py-2 px-4 cursor-pointer" %>
+  </div>
+  <div class="text-center py-4">
+    <%= link_to 'Back', groups_path, class: "border shadow-md border-green-500 text-green-500 px-4 py-1 rounded"%>
+  </div>
+<% end %>

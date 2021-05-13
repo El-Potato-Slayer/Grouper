@@ -1,0 +1,4 @@
+<%= content_for(:title, "New Expense") %>
+<h1 class="text-center text-3xl py-4 bg-white"><%= yield(:title) %></h1>
+
+<%= render 'form', expense: @expense %>

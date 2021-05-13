@@ -1,0 +1,14 @@
+<% most_recent_expenses(expenses).each do |expense| %>
+  <%= link_to expense do %>
+    <div class="flex p-3 m-2 bg-white shadow rounded font-semibold">
+      <%= display_existing_image(expense) %>
+      <div class="flex flex-col justify-between w-full pl-3 pt-2">
+        <div class="flex justify-between">
+          <p class="text-gray-400"><%= expense.name %></p>
+          <p class="text-gray-700">$<%= '%.2f' % expense.amount %></p>
+        </div>
+        <p class="text-xs text-gray-400"><%= expense.created_at.strftime("%d %b %Y") %></p>
+      </div>
+    </div>
+    <% end %>
+<% end %>

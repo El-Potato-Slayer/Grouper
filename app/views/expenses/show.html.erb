@@ -1,0 +1,7 @@
+<%= render 'display_expense' %>
+
+<div class="flex justify-evenly text-gray-50">
+  <%= link_to 'Edit', edit_expense_path(@expense), class: "bg-green-500 shadow-md px-4 py-1 rounded" %> 
+  <%= link_to 'Delete', @expense, class: "bg-red-600 shadow-md px-4 py-1 rounded", method: :delete, data: { confirm: 'Are you sure?' } %>
+  <%= link_to 'Back', :root, class: "border shadow-md border-green-500 text-green-500 px-4 py-1 rounded"%>
+</div>

@@ -1,0 +1,21 @@
+<nav >
+  <div class="bg-blue-500 flex justify-between items-center p-2">
+    <button id="nav-btn" class="text-white rounded nav-toggler" >
+      <i  class="material-icons">menu</i>
+    </button>
+    <%= link_to :root do %>
+      <%= image_tag('floop.png', class: "w-20 h-full") %>
+    <% end %>
+    <i class="material-icons text-white">search</i>
+  </div>
+  <div id="nav-links" class="hidden" >
+    <div class="flex flex-col items-center text-center">
+      <%= link_to "Expenses", :root, class: "py-1 w-full" %>
+      <%= link_to "External expenses", external_expenses_index_path, class: "py-1 w-full" %>
+      <%= link_to "Groups", groups_path, class: "py-1 w-full" %>
+      <%= logout_link %>
+      <%= login_link %>
+      <%= register_link %>
+    </div>
+  </div>
+</nav>

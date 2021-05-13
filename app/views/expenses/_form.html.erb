@@ -1,0 +1,40 @@
+<%= form_with(model: expense) do |form| %>
+  <% if expense.errors.any? %>
+    <div id="error_explanation" class="text-center py-2 px-8 bg-red-500 text-gray-100">
+      <ul>
+        <% expense.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field flex flex-col px-8 text-center ">
+    <%= form.label 'Expense name', class: "py-1 text-lg" %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field flex flex-col px-8 py-4 text-center">
+    <%= form.label :amount, class: "py-1 text-lg" %>
+    <%= form.text_field :amount %>
+  </div>
+
+  <div class="control px-8">
+    <%= form.label "Groups" %>
+    <div class="grid grid-cols-3">
+    <%= form.collection_check_boxes(:group_ids, current_user.groups.alphabetical, :id, :name) do |checkbox| %>
+      <div>
+        <%= checkbox.check_box %>
+        <%= checkbox.label %>
+      </div>
+    <% end %>
+    </div>
+  </div>
+
+  <div class="actions text-center pt-8">
+    <%= form.submit "Submit", class: "cursor-pointer bg-blue-500 rounded-md text-gray-50 py-2 px-4" %>
+  </div>
+  <div class="text-center py-4">
+    <%= link_to 'Back', :back, class: "border shadow-md border-green-500 text-green-500 px-4 py-1 rounded"%>
+  </div>
+<% end %>

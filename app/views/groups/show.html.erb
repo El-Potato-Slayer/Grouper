@@ -1,0 +1,9 @@
+<%= content_for(:title, "#{@group.name} Expenses") %>
+<h1 class="text-center text-3xl py-4 bg-white"><%= yield(:title) %></h1>
+
+<%= render 'grouped_expenses' %>
+
+<div class="text-center">
+  <%= render "shared_partials/add_button" %>
+  <%= link_to 'Back', groups_path, class: "border shadow-md border-green-500 text-green-500 px-6 py-1 rounded"%>
+</div>
